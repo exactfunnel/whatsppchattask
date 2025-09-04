@@ -1,0 +1,17 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- TaskChat Icon Only - Original Design -->
+  
+  <!-- Main circle background -->
+  <circle cx="30" cy="30" r="28" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  
+  <!-- Task checkmark - larger for icon -->
+  <path d="M18 30 L26 38 L44 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Chat bubble accent -->
+  <circle cx="42" cy="18" r="10" fill="#3498DB" opacity="0.9"/>
+  <path d="M37 22 L42 26 L47 22" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Small dots for modern touch -->
+  <circle cx="15" cy="15" r="2" fill="white" opacity="0.6"/>
+  <circle cx="45" cy="45" r="2" fill="white" opacity="0.6"/>
+</svg>

@@ -546,15 +546,16 @@ app.get('/', (c) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TaskChat Bot - Sky Roofing Construction</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
-        <style>
-            .taskchat-green { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
-        </style>
+        <link href="/static/taskchat-styles.css" rel="stylesheet">
+        <link rel="icon" href="/static/logo-icon.svg" type="image/svg+xml">
+        <!-- 100% Original TaskChat Branding - No External Icons -->
     </head>
     <body class="bg-gray-100 min-h-screen">
         <div class="taskchat-green text-white p-6 shadow-lg">
             <div class="max-w-4xl mx-auto text-center">
-                <i class="fas fa-comments text-6xl mb-4"></i>
+                <div class="mb-4">
+                    <img src="/static/logo-icon.svg" alt="TaskChat Logo" class="w-20 h-20 mx-auto mb-2">
+                </div>
                 <h1 class="text-3xl font-bold mb-2">TaskChat Bot</h1>
                 <p class="text-lg opacity-90">Professional task management via secure messaging!</p>
             </div>
@@ -563,7 +564,7 @@ app.get('/', (c) => {
         <div class="max-w-4xl mx-auto p-6">
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
                 <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <i class="fas fa-robot text-blue-500 mr-3"></i>
+                    <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">?</span>
                     How to Use
                 </h2>
                 
@@ -608,7 +609,7 @@ app.get('/', (c) => {
             
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
                 <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <i class="fas fa-cog text-gray-500 mr-3"></i>
+                    <span class="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">⚙</span>
                     Setup Instructions
                 </h2>
                 
@@ -634,29 +635,49 @@ app.get('/', (c) => {
             
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">✓</span>
                     Features
                 </h2>
                 
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="text-center p-4 bg-gray-50 rounded">
-                        <i class="fas fa-plus-circle text-green-500 text-2xl mb-2"></i>
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-2">+</div>
                         <h3 class="font-semibold">Easy Task Creation</h3>
                         <p class="text-sm text-gray-600">Add tasks with natural language</p>
                     </div>
                     <div class="text-center p-4 bg-gray-50 rounded">
-                        <i class="fas fa-calendar text-blue-500 text-2xl mb-2"></i>
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-2">📅</div>
                         <h3 class="font-semibold">Due Date Tracking</h3>
                         <p class="text-sm text-gray-600">Set due dates with "today" or "tomorrow"</p>
                     </div>
                     <div class="text-center p-4 bg-gray-50 rounded">
-                        <i class="fas fa-folder text-purple-500 text-2xl mb-2"></i>
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-2">📂</div>
                         <h3 class="font-semibold">Category Management</h3>
                         <p class="text-sm text-gray-600">Organize tasks with categories</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Footer with Original Branding -->
+        <footer class="bg-gray-800 text-white py-8 mt-12">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="mb-4">
+                    <img src="/static/logo.svg" alt="TaskChat Logo" class="h-12 mx-auto mb-2 filter brightness-0 invert">
+                </div>
+                <p class="text-sm text-gray-400 mb-2">
+                    © 2025 TaskChat Bot - Original design by Sky Roofing Construction TX
+                </p>
+                <p class="text-xs text-gray-500">
+                    Professional task management via secure messaging • 100% Original Branding
+                </p>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <span class="taskchat-badge taskchat-badge-blue">Trademark Free</span>
+                    <span class="taskchat-badge">Original Design</span>
+                    <span class="taskchat-badge taskchat-badge-warning">Business Ready</span>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>
   `)

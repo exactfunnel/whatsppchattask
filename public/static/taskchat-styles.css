@@ -1,0 +1,240 @@
+/* TaskChat Original Styles - 100% Trademark Free */
+
+/* Brand Colors */
+:root {
+  --taskchat-primary: #2ECC71;
+  --taskchat-primary-dark: #27AE60;
+  --taskchat-blue: #3498DB;
+  --taskchat-blue-dark: #2980B9;
+  --taskchat-text: #2C3E50;
+  --taskchat-text-light: #7F8C8D;
+  --taskchat-bg: #ECF0F1;
+  --taskchat-success: #27AE60;
+  --taskchat-warning: #F39C12;
+  --taskchat-danger: #E74C3C;
+}
+
+/* Custom TaskChat Elements */
+.taskchat-green {
+  background: linear-gradient(135deg, var(--taskchat-primary) 0%, var(--taskchat-primary-dark) 100%);
+}
+
+.taskchat-blue {
+  background: linear-gradient(135deg, var(--taskchat-blue) 0%, var(--taskchat-blue-dark) 100%);
+}
+
+/* Original TaskChat Buttons */
+.btn-taskchat {
+  background: var(--taskchat-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-taskchat:hover {
+  background: var(--taskchat-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.btn-taskchat-blue {
+  background: var(--taskchat-blue);
+}
+
+.btn-taskchat-blue:hover {
+  background: var(--taskchat-blue-dark);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* TaskChat Icons - Original Design */
+.taskchat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto;
+}
+
+.taskchat-icon-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.taskchat-icon-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+/* TaskChat Card Styles */
+.taskchat-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.taskchat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--taskchat-primary);
+}
+
+/* TaskChat Badge */
+.taskchat-badge {
+  background: var(--taskchat-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.taskchat-badge-blue {
+  background: var(--taskchat-blue);
+}
+
+.taskchat-badge-warning {
+  background: var(--taskchat-warning);
+}
+
+.taskchat-badge-danger {
+  background: var(--taskchat-danger);
+}
+
+/* TaskChat Progress Bar */
+.taskchat-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--taskchat-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.taskchat-progress-bar {
+  height: 100%;
+  background: var(--taskchat-primary);
+  transition: width 0.3s ease;
+}
+
+/* TaskChat Animation */
+@keyframes taskComplete {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.task-complete-animation {
+  animation: taskComplete 0.3s ease;
+}
+
+/* TaskChat Typography */
+.taskchat-title {
+  color: var(--taskchat-text);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.taskchat-subtitle {
+  color: var(--taskchat-text-light);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* TaskChat Code Blocks */
+.taskchat-code {
+  background: var(--taskchat-bg);
+  color: var(--taskchat-text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  border: 1px solid #BDC3C7;
+}
+
+/* TaskChat Status Indicators */
+.status-pending {
+  color: var(--taskchat-warning);
+}
+
+.status-completed {
+  color: var(--taskchat-success);
+}
+
+.status-overdue {
+  color: var(--taskchat-danger);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .taskchat-card {
+    margin-bottom: 16px;
+  }
+  
+  .btn-taskchat {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .taskchat-icon-lg {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+/* TaskChat Loading Animation */
+.taskchat-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--taskchat-bg);
+  border-top: 3px solid var(--taskchat-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* TaskChat Success/Error Messages */
+.taskchat-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.taskchat-message-success {
+  background: rgba(46, 204, 113, 0.1);
+  color: var(--taskchat-success);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.taskchat-message-error {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--taskchat-danger);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.taskchat-message-info {
+  background: rgba(52, 152, 219, 0.1);
+  color: var(--taskchat-blue);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
