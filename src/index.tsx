@@ -666,16 +666,11 @@ app.get('/', (c) => {
                     <img src="/static/logo.svg" alt="TaskChat Logo" class="h-12 mx-auto mb-2 filter brightness-0 invert">
                 </div>
                 <p class="text-sm text-gray-400 mb-2">
-                    © 2025 TaskChat Bot - Original design by Sky Roofing Construction TX
+                    © 2025 TaskChat Bot - Original design by Exact Funnel
                 </p>
                 <p class="text-xs text-gray-500">
                     Professional task management via secure messaging • 100% Original Branding
                 </p>
-                <div class="mt-4 flex justify-center space-x-4">
-                    <span class="taskchat-badge taskchat-badge-blue">Trademark Free</span>
-                    <span class="taskchat-badge">Original Design</span>
-                    <span class="taskchat-badge taskchat-badge-warning">Business Ready</span>
-                </div>
             </div>
         </footer>
     </body>
