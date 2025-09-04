@@ -1,9 +1,9 @@
-# WhatsApp Task Manager Bot 🤖
+# TaskChat Bot - Professional Task Management 🤖
 
 ## Project Overview
-- **Name**: WhatsApp Task Manager Bot
-- **Goal**: Manage tasks directly through WhatsApp chat messages using natural language
-- **Type**: WhatsApp Business API Integration Bot
+- **Name**: TaskChat Bot
+- **Goal**: Manage tasks directly through secure messaging using natural language
+- **Type**: Business Messaging API Integration Bot
 - **Features**: Natural language task management, category organization, due date tracking
 
 ## 📱 Live Demo & Setup
@@ -11,7 +11,7 @@
 - **Webhook Endpoint**: https://3000-ii4iwenlvds1ly2ypyfdu-6532622b.e2b.dev/webhook
 - **Health Check**: https://3000-ii4iwenlvds1ly2ypyfdu-6532622b.e2b.dev/health
 
-## ✨ WhatsApp Chat Commands
+## ✨ TaskChat Commands
 
 ### 🎯 Basic Task Management
 ```

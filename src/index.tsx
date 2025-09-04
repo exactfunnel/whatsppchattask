@@ -40,9 +40,9 @@ const app = new Hono<{ Bindings: Bindings }>()
 // Enable CORS for all routes
 app.use('*', cors())
 
-// ===== WHATSAPP WEBHOOK ENDPOINTS =====
+// ===== MESSAGING WEBHOOK ENDPOINTS =====
 
-// WhatsApp webhook verification
+// Messaging webhook verification
 app.get('/webhook', (c) => {
   const mode = c.req.query('hub.mode')
   const token = c.req.query('hub.verify_token')
@@ -58,7 +58,7 @@ app.get('/webhook', (c) => {
   }
 })
 
-// WhatsApp webhook for receiving messages
+// Messaging webhook for receiving messages
 app.post('/webhook', async (c) => {
   try {
     const body = await c.req.json()
@@ -72,7 +72,7 @@ app.post('/webhook', async (c) => {
       console.log(`Message from ${phoneNumber}: ${messageText}`)
       
       // Process the message and send response
-      await processWhatsAppMessage(c, phoneNumber, messageText)
+      await processMessage(c, phoneNumber, messageText)
     }
     
     return c.json({ status: 'ok' })
@@ -82,8 +82,8 @@ app.post('/webhook', async (c) => {
   }
 })
 
-// Process WhatsApp messages and respond
-async function processWhatsAppMessage(c: any, phoneNumber: string, messageText: string) {
+// Process messages and respond
+async function processMessage(c: any, phoneNumber: string, messageText: string) {
   const { env } = c
   let response = ''
   
@@ -93,7 +93,7 @@ async function processWhatsAppMessage(c: any, phoneNumber: string, messageText: 
     
     // Help command
     if (msg === 'help' || msg === '/help' || msg === 'menu') {
-      response = `🤖 *Task Manager Bot*
+      response = `🤖 *TaskChat Bot*
 
 *Commands:*
 • \`add [task]\` - Add new task
@@ -154,12 +154,12 @@ Type *help* to see all available commands.
 Quick tip: Try \`add Buy milk\` to add a task! 📝`
     }
     
-    // Send response back to WhatsApp
-    await sendWhatsAppMessage(c, phoneNumber, response)
+    // Send response back via messaging
+    await sendMessage(c, phoneNumber, response)
     
   } catch (error) {
     console.error('Message processing error:', error)
-    await sendWhatsAppMessage(c, phoneNumber, '❌ Sorry, something went wrong. Please try again.')
+    await sendMessage(c, phoneNumber, '❌ Sorry, something went wrong. Please try again.')
   }
 }
 
@@ -438,8 +438,8 @@ async function handleAddCategory(env: any, categoryName: string): Promise<string
   }
 }
 
-// Send message to WhatsApp
-async function sendWhatsAppMessage(c: any, phoneNumber: string, message: string) {
+// Send message via messaging API
+async function sendMessage(c: any, phoneNumber: string, message: string) {
   try {
     const { env } = c
     const accessToken = env.WHATSAPP_TOKEN
@@ -544,19 +544,19 @@ app.get('/', (c) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WhatsApp Task Manager Bot</title>
+        <title>TaskChat Bot - Sky Roofing Construction</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
         <style>
-            .whatsapp-green { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+            .taskchat-green { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
         </style>
     </head>
     <body class="bg-gray-100 min-h-screen">
-        <div class="whatsapp-green text-white p-6 shadow-lg">
+        <div class="taskchat-green text-white p-6 shadow-lg">
             <div class="max-w-4xl mx-auto text-center">
-                <i class="fab fa-whatsapp text-6xl mb-4"></i>
-                <h1 class="text-3xl font-bold mb-2">WhatsApp Task Manager Bot</h1>
-                <p class="text-lg opacity-90">Manage your tasks directly in WhatsApp!</p>
+                <i class="fas fa-comments text-6xl mb-4"></i>
+                <h1 class="text-3xl font-bold mb-2">TaskChat Bot</h1>
+                <p class="text-lg opacity-90">Professional task management via secure messaging!</p>
             </div>
         </div>
         
@@ -614,11 +614,11 @@ app.get('/', (c) => {
                 
                 <div class="space-y-4">
                     <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                        <h3 class="font-semibold">🔧 WhatsApp Business API Setup Required</h3>
+                        <h3 class="font-semibold">🔧 Business Messaging API Setup Required</h3>
                         <p class="text-sm mt-2">To use this bot, you need to:</p>
                         <ol class="list-decimal ml-4 mt-2 text-sm space-y-1">
-                            <li>Create a WhatsApp Business account</li>
-                            <li>Set up Facebook Developer App</li>
+                            <li>Create a Business messaging account</li>
+                            <li>Set up Facebook Developer App (rename to: TaskChat Bot)</li>
                             <li>Configure webhook URL: <code class="bg-gray-100 px-1">/webhook</code></li>
                             <li>Add environment variables: WHATSAPP_TOKEN, WHATSAPP_VERIFY_TOKEN</li>
                         </ol>
@@ -626,7 +626,7 @@ app.get('/', (c) => {
                     
                     <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
                         <h3 class="font-semibold">🌐 Webhook Endpoint</h3>
-                        <p class="text-sm mt-2">Webhook URL for WhatsApp:</p>
+                        <p class="text-sm mt-2">Webhook URL for messaging:</p>
                         <code class="bg-gray-100 px-2 py-1 rounded text-sm">https://your-domain.pages.dev/webhook</code>
                     </div>
                 </div>
