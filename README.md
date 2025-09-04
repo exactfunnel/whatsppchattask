@@ -7,7 +7,9 @@
 - **Features**: Natural language task management, category organization, due date tracking
 
 ## 📱 Live Demo & Setup
-- **Bot Interface**: https://3000-ii4iwenlvds1ly2ypyfdu-6532622b.e2b.dev
+- **Production URL**: https://whatsapp-taskbot.pages.dev
+- **Git Repository**: https://github.com/exactfunnel/whatsppchattask
+- **Auto-Deploy**: Connected to GitHub main branch
 - **Webhook Endpoint**: https://3000-ii4iwenlvds1ly2ypyfdu-6532622b.e2b.dev/webhook
 - **Health Check**: https://3000-ii4iwenlvds1ly2ypyfdu-6532622b.e2b.dev/health
 
